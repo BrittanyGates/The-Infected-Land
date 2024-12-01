@@ -12,8 +12,6 @@ class Hero:
     def __init__(self, name: str, class_type: str, race_type: str, weapon_type: str, weapon_damage: int,
                  armor_type: str, armor_defense: int, health: int):
         """ Additional information about the Hero class.
-        In the Alpha version the player will get a standard Hero they cannot change.
-        In the Beta version the player will be able to customize the Hero.
         :param name: The hero's name.
         :param class_type: The hero's class type (ex. Warrior or Rouge).
         :param race_type: The hero's race type (ex. Human or Elf).
