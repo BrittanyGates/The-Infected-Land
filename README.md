@@ -29,8 +29,8 @@ generator that determines if the action is successful or not.
 
 1. Open your Terminal or Windows Terminal
 2. Change directory (`cd`) to the `src` directory of the program's directory path using one of the examples below:
-    - Linux or macOS: `cd /home/$username/Downloads/the_infected_land/src`
-    - Windows: `cd \Users\$username\Downloads\the_infected_land\src`
+    - Linux or macOS: `cd /home/$username/Downloads/The-Infected-Land/src`
+    - Windows: `cd \Users\$username\Downloads\The-Infected-Land\src`
 3. Type the following command to run the program: `python main.py`
 
 ## Help
