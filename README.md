@@ -29,14 +29,13 @@ generator that determines if the action is successful or not.
 
 1. Open your Terminal or Windows Terminal
 2. Change directory (`cd`) to the `src` directory of the program's directory path using one of the examples below:
-   - Linux or macOS: `cd /home/$username/Downloads/the_infected_land/src`
-   - Windows: `cd \Users\$username\Downloads\the_infected_land\src`
+    - Linux or macOS: `cd /home/$username/Downloads/the_infected_land/src`
+    - Windows: `cd \Users\$username\Downloads\the_infected_land\src`
 3. Type the following command to run the program: `python main.py`
 
 ## Help
 
-Hopefully you won't run into any problems running this program. If you do you can reach out to me via one of the links
-in the [Author](#authors) section.
+* If you do you can reach out to me via one of the links in the [Author](#authors) section.
 
 ## Authors
 
@@ -49,6 +48,10 @@ in the [Author](#authors) section.
 
 ## Version History
 
+* 0.2
+    * Improved the centering of the displayed text layout
+    * Consolidated multiple related modules into new modules
+    * Fixed typos
 * 0.1
     * Initial Release
 
