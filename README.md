@@ -37,9 +37,9 @@ generator that determines if the action is successful or not.
 
 ## Help
 
-* If you do you can reach out to me via one of the links in the [Author](#authors) section.
+* If you do you can reach out to me via one of the links in the [Author](#author) section.
 
-## Authors
+## Author
 
 * Brittany Gates
     * [Website](https://brittbot.com)
