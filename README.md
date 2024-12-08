@@ -1,5 +1,7 @@
 # The Infected Land
 
+![A piece of barren land infected by evil creatures like wolves, bats, ghouls, mummies, wizards, and skeletons.](the_infected_land_gemini_generated.jpeg)
+
 A CLI game where you (as the Hero) must defeat the Villain's evil creations to cleanse the infection harming the land
 and its residents.
 
