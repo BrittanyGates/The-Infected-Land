@@ -33,7 +33,7 @@ generator that determines if the action is successful or not.
 2. Change directory (`cd`) to the `src` directory of the program's directory path using one of the examples below:
     - Linux or macOS: `cd /home/$username/Downloads/The-Infected-Land/src`
     - Windows: `cd \Users\$username\Downloads\The-Infected-Land\src`
-3. Type the following command to run the program: `python main.py`
+3. Type the following command to run the program: `python main.py` or `python3 main.py`
 
 ## Help
 
