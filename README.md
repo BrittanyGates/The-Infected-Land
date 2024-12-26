@@ -15,7 +15,7 @@ generator that determines if the action is successful or not.
 
 ### Dependencies
 
-* This program requires the latest version of Python.
+*  Python 3 (latest release is recommended).
     * Linux OS users: Python is already installed
     * macOS users and Windows users: Python installation files are available from
       the [official Python website](https://www.python.org/downloads/release/python-3130/).
@@ -25,14 +25,14 @@ generator that determines if the action is successful or not.
 * To run the program you can do either of the following:
     * Clone the repo: https://github.com/brittbot-bgates/the_infected_land.git
     * Download the ZIP file from the
-      repo: https://github.com/brittbot-bgates/the_infected_land/archive/refs/heads/main.zip
+      repo: https://github.com/brittbot-bgates/the_infected_land/archive/refs/heads/master.zip
 
 ### Executing program
 
-1. Open your Terminal or Windows Terminal
+1. Open the Terminal or Windows Terminal/Command Prompt
 2. Change directory (`cd`) to the `src` directory of the program's directory path using one of the examples below:
-    - Linux or macOS: `cd /home/$username/Downloads/The-Infected-Land/src`
-    - Windows: `cd \Users\$username\Downloads\The-Infected-Land\src`
+    - Linux or macOS: `cd /home/$username/Downloads/The-Infected-Land-master/src`
+    - Windows: `cd \Users\$username\Downloads\The-Infected-Land-master\src`
 3. Type the following command to run the program: `python main.py` or `python3 main.py`
 
 ## Help
@@ -50,12 +50,11 @@ generator that determines if the action is successful or not.
 
 ## Version History
 
-* 0.2
+* Latest release notes as of late December 2024.
     * Improved the centering of the displayed text layout
     * Consolidated multiple related modules into new modules
     * Fixed typos
-* 0.1
-    * Initial Release
+    * Initial release
 
 ## License
 
