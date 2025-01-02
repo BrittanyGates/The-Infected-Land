@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-from text_display_tools import *
+"""This module provides health regeneration to the Hero."""
+from console import console
+from text_display_tools import sleep_print
 import random
 
 
@@ -8,44 +10,44 @@ def regain_health() -> int:
     :return: An int added to the hero's health points.
     """
     from hero import hero  # Placing the import statement here to avoid a circular import error
-    print()
+    console.print()
     sleep_print()
-    print(center_text(f"{hero.name} sees the residents leave their homes."))
-    print()
+    console.print(f"{hero.name} sees the residents leave their homes.", justify="center")
+    console.print()
     sleep_print()
-    print(center_text("They walk over to the hero carrying items."))
-    print()
+    console.print("They walk over to the hero carrying items.", justify="center")
+    console.print()
     sleep_print()
-    print(center_text("\"Thank you for saving us.\""))
-    print()
+    console.print("\"Thank you for saving us.\"", justify="center")
+    console.print()
     sleep_print()
-    print(center_text("\"We brought you an elixir to regain your health.\""))
-    print()
+    console.print("\"We brought you an elixir to regain your health.\"", justify="center")
+    console.print()
     sleep_print()
     if hero.health == 100:
-        print(center_text(f"{hero.name} rejects the elixir due to already being at max health."))
+        console.print(f"{hero.name} rejects the elixir due to already being at max health.", justify="center")
     else:
-        print(center_text(f"{hero.name} takes the bottle, opens it, and drinks the liquid."))
-        print()
+        console.print(f"{hero.name} takes the bottle, opens it, and drinks the liquid.", justify="center")
+        console.print()
         sleep_print()
-        print(center_text("It is pleasantly warm, and is sweet like honey."))
+        console.print("It is pleasantly warm, and is sweet like honey.", justify="center")
         health_points_list: list = [10, 20, 30]
         randomly_chosen_health_points: int = random.choice(health_points_list)
         if hero.health + randomly_chosen_health_points > 100:
             hero.health = 100
-            print()
+            console.print()
             sleep_print()
-            print(center_text(f"!! {hero.name} regains {randomly_chosen_health_points} health points !!"))
-            print()
+            console.print(f"!! {hero.name} regains {randomly_chosen_health_points} health points !!", justify="center")
+            console.print()
             sleep_print()
-            print(center_text(f"== The hero is at max (100) health points =="))
+            console.print(f"== The hero is at max (100) health points ==", justify="center")
             return hero.health
         else:
             hero.health += randomly_chosen_health_points
-            print()
+            console.print()
             sleep_print()
-            print(center_text(f"!! {hero.name} regains {randomly_chosen_health_points} health points !!"))
-            print()
+            console.print(f"!! {hero.name} regains {randomly_chosen_health_points} health points !!", justify="center")
+            console.print()
             sleep_print()
-            print(center_text(f"== The hero now has {hero.health} health points =="))
+            console.print(f"== The hero now has {hero.health} health points ==", justify="center")
             return hero.health
