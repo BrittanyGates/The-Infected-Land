@@ -5,7 +5,7 @@
 A CLI game where you (as the Hero) must defeat the Villain's evil creations to cleanse the infection harming the land
 and its residents.
 
-## Description
+## Project Description
 
 This game uses the Terminal (Linux and macOS) or the Windows Terminal to run the game. It takes in user input via the
 keyboard to "Attack" or "Block" the enemy. Both the player's and the enemy's attack are attached to a random number
@@ -15,19 +15,25 @@ generator that determines if the action is successful or not.
 
 ### Dependencies
 
-*  Python 3 (latest release is recommended).
+* Python 3 (latest release is recommended).
     * Linux OS users: Python is already installed
     * macOS users and Windows users: Python installation files are available from
       the [official Python website](https://www.python.org/downloads/release/python-3130/).
+* Rich Python Package
+    * This package can be installed for various operating systems from PyPi [here](https://pypi.org/project/rich/).
 
-### Installing
+### Download Options
 
-* To run the program you can do either of the following:
+* Download the program via one of the two options below:
     * Clone the repo: https://github.com/brittbot-bgates/the_infected_land.git
     * Download the ZIP file from the
       repo: https://github.com/brittbot-bgates/the_infected_land/archive/refs/heads/master.zip
 
-### Executing program
+### Executing The Program
+
+> I recommend executing this program in a Python Virtual Environment (virtualenv) to install the dependencies easier.
+>
+> Learn more about virtualenvs, including how to create them, from the [official Python Documentation](https://docs.python.org/3/library/venv.html).
 
 1. Open the Terminal or Windows Terminal/Command Prompt
 2. Change directory (`cd`) to the `src` directory of the program's directory path using one of the examples below:
@@ -37,7 +43,8 @@ generator that determines if the action is successful or not.
 
 ## Help
 
-* If you do you can reach out to me via one of the links in the [Author](#author) section.
+Please file a new issue using the [Issues](https://github.com/BrittanyGates/The-Infected-Land/issues) tab on the
+repo.
 
 ## Author
 
@@ -50,6 +57,10 @@ generator that determines if the action is successful or not.
 
 ## Version History
 
+* Latest release notes as of January 2025
+  * Refactored the project to use the Rich package to improve the text displayed on screen.
+  * Corrected the logic for all the `try/except` statements.
+  * Added and/or fixed docstrings in various modules.
 * Latest release notes as of late December 2024.
     * Improved the centering of the displayed text layout
     * Consolidated multiple related modules into new modules

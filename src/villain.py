@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-from text_display_tools import *
+"""This module contains the Villain class and its methods."""
+from console import attack_or_block_successful, attack_or_block_unsuccessful, console, hero_or_villain_defeated
+from text_display_tools import attack_sleep_print, clear_screen
 import random
 import sys
 
@@ -8,7 +10,7 @@ class Villain:
     def __init__(self, name: str, class_type: str, race_type: str, beast_type: str, weapon_type: str,
                  weapon_damage: int,
                  armor_type: str, armor_defense: int, health: int):
-        """ Additional information about the Villain class.
+        """Additional information about the Villain class.
         :param name: The villain's name.
         :param class_type: The villain's class type (ex. Non-human or Human).
         :param race_type: The villain's race type (ex. Human or Elf).
@@ -34,10 +36,10 @@ class Villain:
         :return: None
         """
         if self.armor_type == "None":
-            print(center_text(f"== {self.name} has {self.health} points of health and no armor =="))
+            console.print(f"== {self.name} has {self.health} points of health and no armor ==", justify="center")
         else:
-            print(center_text(f"== {self.name} has {self.health} points of health =="))
-            print(center_text(f"== {self.name} wears {self.armor_type} with {self.armor_defense} points of defense =="))
+            console.print(f"== {self.name} has {self.health} points of health ==", justify="center")
+            console.print(f"== {self.name} wears {self.armor_type} with {self.armor_defense} points of defense ==", justify="center")
 
     def beast_attack_hero(self) -> None:
         """Attacks the Hero with a random beast.
@@ -45,31 +47,27 @@ class Villain:
         """
         from hero import hero  # Placing the import statement here to avoid a circular import error
         random_num = random.randint(0, 1)
-        print(center_text("*" * 80))
-        print(center_text(f"!! {self.name} attacks {hero.name} with its {self.weapon_type} !!"))
-        print(center_text("*" * 80))
+        console.print(f"!! {self.name} attacks {hero.name} with its {self.weapon_type} !!", style=attack_or_block_successful, justify="center")
         attack_sleep_print()
         if random_num == 0:
-            print()
-            print(center_text(f"-- {hero.name} fails to block the attack with their shield --"))
+            console.print()
+            console.print(f"-- {hero.name} fails to block the attack with their shield --", style=attack_or_block_unsuccessful, justify="center")
             attack_sleep_print()
-            print()
-            print(center_text(f"!! {self.weapon_type} does {self.weapon_damage - hero.armor_defense} points of damage !!"))
+            console.print()
+            console.print(f"!! {self.weapon_type} does {self.weapon_damage - hero.armor_defense} points of damage !!", justify="center")
             hero.health -= (self.weapon_damage - hero.armor_defense)
             if hero.health <= 0:
-                print(center_text("-" * 80))
-                print(center_text(f"{self.name} defeats {hero.name} during battle. Game over."))
-                print(center_text("-" * 80))
-                print()
+                console.print(f"{self.name} defeats {hero.name} during battle. Game over.", style=hero_or_villain_defeated, justify="center")
+                console.print()
                 sys.exit()
             else:
-                print()
+                console.print()
                 attack_sleep_print()
                 clear_screen()
                 hero.hero_attack_beast()
         else:
-            print()
-            print(center_text(f"{self.name} misses with {self.weapon_type} as {hero.name} blocks it."))
+            console.print()
+            console.print(f"{self.name} misses with {self.weapon_type} as {hero.name} blocks it.", style=attack_or_block_unsuccessful, justify="center")
             attack_sleep_print()
             clear_screen()
             hero.hero_attack_beast()
@@ -80,31 +78,27 @@ class Villain:
         """
         from hero import hero  # Placing the import statement here to avoid a circular import error
         random_num = random.randint(0, 1)
-        print(center_text("*" * 80))
-        print(center_text(f"!! {self.name} attacks {hero.name} with its {self.weapon_type} !!"))
-        print(center_text("*" * 80))
+        console.print(f"!! {self.name} attacks {hero.name} with its {self.weapon_type} !!", style=attack_or_block_successful, justify="center")
         attack_sleep_print()
         if random_num == 0:
-            print()
-            print(center_text(f"-- {hero.name} fails to block the attack with their shield --"))
+            console.print()
+            console.print(f"-- {hero.name} fails to block the attack with their shield --", style=attack_or_block_unsuccessful, justify="center")
             attack_sleep_print()
-            print()
-            print(center_text(f"!! {self.weapon_type} does {self.weapon_damage - hero.armor_defense} points of damage !!"))
+            console.print()
+            console.print(f"!! {self.weapon_type} does {self.weapon_damage - hero.armor_defense} points of damage !!", justify="center")
             hero.health -= (self.weapon_damage - hero.armor_defense)
             if hero.health <= 0:
-                print(center_text("-" * 80))
-                print(center_text(f"{self.name} defeats {hero.name} during battle. Game over."))
-                print(center_text("-" * 80))
-                print()
+                console.print(f"{self.name} defeats {hero.name} during battle. Game over.", style=hero_or_villain_defeated, justify="center")
+                console.print()
                 sys.exit()
             else:
-                print()
+                console.print()
                 attack_sleep_print()
                 clear_screen()
                 hero.hero_attack_non_beast()
         else:
-            print()
-            print(center_text(f"{self.name} misses with {self.weapon_type} as {hero.name} blocks it."))
+            console.print()
+            console.print(f"{self.name} misses with {self.weapon_type} as {hero.name} blocks it.", style=attack_or_block_unsuccessful, justify="center")
             attack_sleep_print()
             clear_screen()
             hero.hero_attack_non_beast()
@@ -115,31 +109,27 @@ class Villain:
         """
         from hero import hero  # Placing the import statement here to avoid a circular import error
         random_num = random.randint(0, 1)
-        print(center_text("*" * 80))
-        print(center_text(f"!! {self.name} attacks {hero.name} with its {self.weapon_type} !!"))
-        print(center_text("*" * 80))
+        console.print(f"!! {self.name} attacks {hero.name} with its {self.weapon_type} !!", style=attack_or_block_successful, justify="center")
         attack_sleep_print()
         if random_num == 0:
-            print()
-            print(center_text(f"-- {hero.name} fails to block the attack with their shield --"))
+            console.print()
+            console.print(f"-- {hero.name} fails to block the attack with their shield --", style=attack_or_block_unsuccessful, justify="center")
             attack_sleep_print()
-            print()
-            print(center_text(f"!! {self.weapon_type} does {self.weapon_damage - hero.armor_defense} points of damage !!"))
+            console.print()
+            console.print(f"!! {self.weapon_type} does {self.weapon_damage - hero.armor_defense} points of damage !!", justify="center")
             hero.health -= (self.weapon_damage - hero.armor_defense)
             if hero.health <= 0:
-                print(center_text("-" * 80))
-                print(center_text(f"{self.name} defeats {hero.name} during battle. Game over."))
-                print(center_text("-" * 80))
-                print()
+                console.print(f"{self.name} defeats {hero.name} during battle. Game over.", style=hero_or_villain_defeated, justify="center")
+                console.print()
                 sys.exit()
             else:
-                print()
+                console.print()
                 attack_sleep_print()
                 clear_screen()
                 hero.hero_attack_human()
         else:
-            print()
-            print(center_text(f"{self.name} misses with {self.weapon_type} as {hero.name} blocks it."))
+            console.print()
+            console.print(f"{self.name} misses with {self.weapon_type} as {hero.name} blocks it.", style=attack_or_block_unsuccessful, justify="center")
             attack_sleep_print()
             clear_screen()
             hero.hero_attack_human()
@@ -150,31 +140,27 @@ class Villain:
         """
         from hero import hero  # Placing the import statement here to avoid a circular import error
         random_num = random.randint(0, 1)
-        print(center_text("*" * 80))
-        print(center_text(f"!! {self.name} attacks {hero.name} with its {self.weapon_type} !!"))
-        print(center_text("*" * 80))
+        console.print(f"!! {self.name} attacks {hero.name} with its {self.weapon_type} !!", style=attack_or_block_successful, justify="center")
         attack_sleep_print()
         if random_num == 0:
-            print()
-            print(center_text(f"-- {hero.name} fails to block the attack with their shield --"))
+            console.print()
+            console.print(f"-- {hero.name} fails to block the attack with their shield --", style=attack_or_block_unsuccessful, justify="center")
             attack_sleep_print()
-            print()
-            print(center_text(f"!! {self.weapon_type} does {self.weapon_damage - hero.armor_defense} points of damage !!"))
+            console.print()
+            console.print(f"!! {self.weapon_type} does {self.weapon_damage - hero.armor_defense} points of damage !!", justify="center")
             hero.health -= (self.weapon_damage - hero.armor_defense)
             if hero.health <= 0:
-                print(center_text("-" * 80))
-                print(center_text(f"{self.name} defeats {hero.name} during battle. Game over."))
-                print(center_text("-" * 80))
-                print()
+                console.print(f"{self.name} defeats {hero.name} during battle. Game over.", style=hero_or_villain_defeated, justify="center")
+                console.print()
                 sys.exit()
             else:
-                print()
+                console.print()
                 attack_sleep_print()
                 clear_screen()
                 hero.hero_attack_main_villain()
         else:
-            print()
-            print(center_text(f"{self.name} misses with {self.weapon_type} as {hero.name} blocks it."))
+            console.print()
+            console.print(f"{self.name} misses with {self.weapon_type} as {hero.name} blocks it.", style=attack_or_block_unsuccessful, justify="center")
             attack_sleep_print()
             clear_screen()
             hero.hero_attack_main_villain()

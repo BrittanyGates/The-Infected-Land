@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-import os
+"""This module modifies the way the text displays in the game."""
 from time import sleep
+import os
 
 
 def attack_sleep_print() -> None:
@@ -8,18 +9,6 @@ def attack_sleep_print() -> None:
     :return: None
     """
     sleep(3)
-
-
-def center_text(text, width=None) -> None:
-    """Centers the displayed text in the terminal window.
-
-    :param text: The text displayed on the terminal window.
-    :param width: The width of the end user's terminal window.
-    :return: None
-    """
-    if width is None:
-        width = os.get_terminal_size().columns
-    return text.center(width)
 
 
 def clear_screen() -> None:
