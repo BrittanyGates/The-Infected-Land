@@ -11,7 +11,7 @@ This game uses the Terminal (Linux and macOS) or the Windows Terminal to run the
 keyboard to "Attack" or "Block" the enemy. Both the player's and the enemy's attack are attached to a random number
 generator that determines if the action is successful or not.
 
-## Dependencies
+## Program Dependencies
 
 > I recommend installing these in a Python Virtual Environment (virtualenv).
 >
@@ -21,7 +21,7 @@ generator that determines if the action is successful or not.
 > the [official Python Documentation](https://docs.python.org/3/library/venv.html).
 
 * Python 3
-    * Linux OS users: Python is already installed
+    * Linux OS users: Python is already installed.
     * macOS users and Windows users: Python installation files are available from
       the [official Python website](https://www.python.org/downloads/release/python-3130/).
 * Rich Python Package
@@ -36,26 +36,16 @@ generator that determines if the action is successful or not.
 
 ## Running The Program
 
-1. Open the Terminal or Windows Terminal/Command Prompt
+1. Open the Terminal or Windows Terminal/Command Prompt.
 2. Change directory (`cd`) to the `src` directory of the program's directory path. If you downloaded the files into
    your `Downloads` directory then you can use this command:
     - Linux or macOS: `cd /home/$username/Downloads/The-Infected-Land-master/src`
     - Windows: `cd \Users\$username\Downloads\The-Infected-Land-master\src`
-3. Type the following command to run the program: `python main.py` or `python3 main.py`
+3. Type the following command to run the program: `python main.py` or `python3 main.py`.
 
 ## Help
 
-Please file a new issue using the [Issues](https://github.com/BrittanyGates/The-Infected-Land/issues) tab on the
-repo.
-
-## Author
-
-* Brittany Gates
-    * [Website](https://brittbot.com)
-    * [Email](mailto:support@brittbot.com)
-    * [LinkedIn](https://www.linkedin.com/in/brittanycgates/)
-    * [Twitter / X](https://x.com/brittany__gates)
-    * [YouTube](https://www.youtube.com/c/BrittanyGates)
+Please file a new issue using the [Issues](https://github.com/BrittanyGates/The-Infected-Land/issues) tab on the repo.
 
 ## Version History
 
