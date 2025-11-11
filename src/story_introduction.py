@@ -4,6 +4,7 @@ from battles import beast_battle
 from console import console, notification
 from hero import hero
 from text_display_tools import clear_screen, sleep_print
+from villain import random_beast
 
 
 def get_the_hero_name() -> str:
@@ -19,7 +20,7 @@ def get_the_hero_name() -> str:
             console.print()
             console.print("I cannot remember that long of a name. Please enter a shorter one.", justify="center")
             sleep_print()
-            get_the_hero_name()
+            return get_the_hero_name()
         elif hero.name == "":
             console.print()
             console.print("Are you sure you don't have a name? Everyone has a name.", justify="center")
@@ -37,8 +38,7 @@ def get_the_hero_name() -> str:
         console.print("!! The name can only contain letters !!", style=notification, justify="center")
         console.print()
         sleep_print()
-        get_the_hero_name()
-        console.print()
+        return get_the_hero_name()
 
 
 def story_intro() -> None:
@@ -126,4 +126,4 @@ def story_intro() -> None:
     console.print()
     sleep_print()
     clear_screen()
-    beast_battle()
+    beast_battle(hero, random_beast)

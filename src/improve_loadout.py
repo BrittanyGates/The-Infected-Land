@@ -4,11 +4,10 @@ from console import console, notification
 from text_display_tools import clear_screen, sleep_print
 
 
-def improve_loadout() -> None:
+def improve_loadout(hero) -> None:
     """Allows the player to choose either a stronger sword or better armor.    
     :return: None 
     """
-    from hero import hero  # Placing the import statement here to avoid a circular import error
     console.print()
     sleep_print()
     console.print("Another resident steps forward to speak:", justify="center")
@@ -38,7 +37,7 @@ def improve_loadout() -> None:
         console.print()
         sleep_print()
         clear_screen()
-        improve_loadout()
+        improve_loadout(hero)
     else:
         if user_input == "S":
             console.print()
@@ -106,4 +105,4 @@ def improve_loadout() -> None:
             console.print("!! Incorrect input !!", style=notification, justify="center")
             sleep_print()
             clear_screen()
-            improve_loadout()
+            improve_loadout(hero)

@@ -5,13 +5,13 @@ from console import console
 from improve_loadout import improve_loadout
 from regain_health import regain_health
 from text_display_tools import sleep_print
+from villain import random_human, random_non_beast, main_villain
 
 
-def after_beast_battle_story() -> None:
+def after_beast_battle_story(hero) -> None:
     """Displays the game's storyline after the hero defeats the beast.
     :return: None
     """
-    from hero import hero  # Placing the import statement here to avoid a circular import error
     console.print()
     sleep_print()
     console.print("After the battle the other beasts start to disintegrate.", justify="center")
@@ -33,8 +33,8 @@ def after_beast_battle_story() -> None:
     console.print()
     sleep_print()
     console.print("Trees shoot up from the ground and extend their branches.", justify="center")
-    regain_health()
-    improve_loadout()
+    regain_health(hero)
+    improve_loadout(hero)
     console.print()
     console.print("An evil scream reverberates through the land.", justify="center")
     console.print()
@@ -79,14 +79,13 @@ def after_beast_battle_story() -> None:
     console.print()
     sleep_print()
     console.print("Banshees howl as they soar around.", justify="center")
-    non_beast_battle()
+    non_beast_battle(hero, random_non_beast)
 
 
-def after_human_battle_story() -> None:
+def after_human_battle_story(hero) -> None:
     """Displays the game's storyline after the hero defeats the human.
     :return: None
     """
-    from hero import hero  # Placing the import statement here to avoid a circular import error
     console.print()
     sleep_print()
     console.print("After the battle the other humans fade away.", justify="center")
@@ -96,8 +95,8 @@ def after_human_battle_story() -> None:
     console.print()
     sleep_print()
     console.print(f"{hero.name} appears puzzled.", justify="center")
-    regain_health()
-    improve_loadout()
+    regain_health(hero)
+    improve_loadout(hero)
     console.print()
     sleep_print()
     console.print("A tall column of flames appears in the middle of the land.", justify="center")
@@ -125,14 +124,13 @@ def after_human_battle_story() -> None:
     console.print()
     sleep_print()
     console.print(f"\"I will show the person who sent you here that now!\"", justify="center")
-    villain_battle()
+    villain_battle(hero, main_villain)
 
 
-def after_non_beast_battle_story() -> None:
+def after_non_beast_battle_story(hero) -> None:
     """Displays the game's storyline after the hero defeats the non-beast.
     :return: None
     """
-    from hero import hero  # Placing the import statement here to avoid a circular import error
     console.print()
     sleep_print()
     console.print("After the battle the other non-beasts melt into puddles.", justify="center")
@@ -157,8 +155,8 @@ def after_non_beast_battle_story() -> None:
     console.print()
     sleep_print()
     console.print("Bushes sprout from the ground with little tufts of green grass.", justify="center")
-    regain_health()
-    improve_loadout()
+    regain_health(hero)
+    improve_loadout(hero)
     console.print()
     console.print("A sinister groan travels through the land.", justify="center")
     console.print()
@@ -212,4 +210,4 @@ def after_non_beast_battle_story() -> None:
     console.print()
     sleep_print()
     console.print("Finally, a cultist kneels on the ground praying in an unknown language.", justify="center")
-    human_battle()
+    human_battle(hero, random_human)

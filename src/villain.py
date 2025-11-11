@@ -41,11 +41,10 @@ class Villain:
             console.print(f"== {self.name} has {self.health} points of health ==", justify="center")
             console.print(f"== {self.name} wears {self.armor_type} with {self.armor_defense} points of defense ==", justify="center")
 
-    def beast_attack_hero(self) -> None:
+    def attack_hero(self, hero) -> None:
         """Attacks the Hero with a random beast.
         :return: None
         """
-        from hero import hero  # Placing the import statement here to avoid a circular import error
         random_num = random.randint(0, 1)
         console.print(f"!! {self.name} attacks {hero.name} with its {self.weapon_type} !!", style=attack_or_block_successful, justify="center")
         attack_sleep_print()
@@ -64,106 +63,11 @@ class Villain:
                 console.print()
                 attack_sleep_print()
                 clear_screen()
-                hero.hero_attack_beast()
         else:
             console.print()
             console.print(f"{self.name} misses with {self.weapon_type} as {hero.name} blocks it.", style=attack_or_block_unsuccessful, justify="center")
             attack_sleep_print()
             clear_screen()
-            hero.hero_attack_beast()
-
-    def non_beast_attack_hero(self) -> None:
-        """Attacks the Hero with a random non-beast.
-        :return: None
-        """
-        from hero import hero  # Placing the import statement here to avoid a circular import error
-        random_num = random.randint(0, 1)
-        console.print(f"!! {self.name} attacks {hero.name} with its {self.weapon_type} !!", style=attack_or_block_successful, justify="center")
-        attack_sleep_print()
-        if random_num == 0:
-            console.print()
-            console.print(f"-- {hero.name} fails to block the attack with their shield --", style=attack_or_block_unsuccessful, justify="center")
-            attack_sleep_print()
-            console.print()
-            console.print(f"!! {self.weapon_type} does {self.weapon_damage - hero.armor_defense} points of damage !!", justify="center")
-            hero.health -= (self.weapon_damage - hero.armor_defense)
-            if hero.health <= 0:
-                console.print(f"{self.name} defeats {hero.name} during battle. Game over.", style=hero_or_villain_defeated, justify="center")
-                console.print()
-                sys.exit()
-            else:
-                console.print()
-                attack_sleep_print()
-                clear_screen()
-                hero.hero_attack_non_beast()
-        else:
-            console.print()
-            console.print(f"{self.name} misses with {self.weapon_type} as {hero.name} blocks it.", style=attack_or_block_unsuccessful, justify="center")
-            attack_sleep_print()
-            clear_screen()
-            hero.hero_attack_non_beast()
-
-    def human_attack_hero(self) -> None:
-        """attacks the Hero with a random human.
-        :return: None
-        """
-        from hero import hero  # Placing the import statement here to avoid a circular import error
-        random_num = random.randint(0, 1)
-        console.print(f"!! {self.name} attacks {hero.name} with its {self.weapon_type} !!", style=attack_or_block_successful, justify="center")
-        attack_sleep_print()
-        if random_num == 0:
-            console.print()
-            console.print(f"-- {hero.name} fails to block the attack with their shield --", style=attack_or_block_unsuccessful, justify="center")
-            attack_sleep_print()
-            console.print()
-            console.print(f"!! {self.weapon_type} does {self.weapon_damage - hero.armor_defense} points of damage !!", justify="center")
-            hero.health -= (self.weapon_damage - hero.armor_defense)
-            if hero.health <= 0:
-                console.print(f"{self.name} defeats {hero.name} during battle. Game over.", style=hero_or_villain_defeated, justify="center")
-                console.print()
-                sys.exit()
-            else:
-                console.print()
-                attack_sleep_print()
-                clear_screen()
-                hero.hero_attack_human()
-        else:
-            console.print()
-            console.print(f"{self.name} misses with {self.weapon_type} as {hero.name} blocks it.", style=attack_or_block_unsuccessful, justify="center")
-            attack_sleep_print()
-            clear_screen()
-            hero.hero_attack_human()
-
-    def main_villain_attack_hero(self) -> None:
-        """Attacks the Hero with the Main Villain.
-        :return: None
-        """
-        from hero import hero  # Placing the import statement here to avoid a circular import error
-        random_num = random.randint(0, 1)
-        console.print(f"!! {self.name} attacks {hero.name} with its {self.weapon_type} !!", style=attack_or_block_successful, justify="center")
-        attack_sleep_print()
-        if random_num == 0:
-            console.print()
-            console.print(f"-- {hero.name} fails to block the attack with their shield --", style=attack_or_block_unsuccessful, justify="center")
-            attack_sleep_print()
-            console.print()
-            console.print(f"!! {self.weapon_type} does {self.weapon_damage - hero.armor_defense} points of damage !!", justify="center")
-            hero.health -= (self.weapon_damage - hero.armor_defense)
-            if hero.health <= 0:
-                console.print(f"{self.name} defeats {hero.name} during battle. Game over.", style=hero_or_villain_defeated, justify="center")
-                console.print()
-                sys.exit()
-            else:
-                console.print()
-                attack_sleep_print()
-                clear_screen()
-                hero.hero_attack_main_villain()
-        else:
-            console.print()
-            console.print(f"{self.name} misses with {self.weapon_type} as {hero.name} blocks it.", style=attack_or_block_unsuccessful, justify="center")
-            attack_sleep_print()
-            clear_screen()
-            hero.hero_attack_main_villain()
 
 
 # Main Villain instance
