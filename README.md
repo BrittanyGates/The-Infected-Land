@@ -43,12 +43,15 @@ generator that determines if the action is successful or not.
     - Windows: `cd \Users\$username\Downloads\The-Infected-Land-master\src`
 3. Type the following command to run the program: `python main.py` or `python3 main.py`.
 
-## Help
+## Found A Bug? Need Help?
 
 Please file a new issue using the [Issues](https://github.com/BrittanyGates/The-Infected-Land/issues) tab on the repo.
 
 ## Version History
 
+* Latest release notes as of November 2025:
+    * Refactored the battle logic into its own module (`battles.py`).
+    * Resolved circular import issues.
 * Latest release notes as of February 2025:
     * Updated the README.
 * Latest release notes as of January 2025:

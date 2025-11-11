@@ -5,11 +5,10 @@ from text_display_tools import sleep_print
 import random
 
 
-def regain_health() -> int:
+def regain_health(hero) -> int:
     """The player regains a range of health points (10 to 30) after each battle.
     :return: An int added to the hero's health points.
     """
-    from hero import hero  # Placing the import statement here to avoid a circular import error
     console.print()
     sleep_print()
     console.print(f"{hero.name} sees the residents leave their homes.", justify="center")
@@ -25,7 +24,7 @@ def regain_health() -> int:
     console.print()
     sleep_print()
     if hero.health == 100:
-        console.print(f"{hero.name} rejects the elixir due to already being at max health.", justify="center")
+        return console.print(f"{hero.name} rejects the elixir due to already being at max health.", justify="center")
     else:
         console.print(f"{hero.name} takes the bottle, opens it, and drinks the liquid.", justify="center")
         console.print()
