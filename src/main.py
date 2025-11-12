@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """The Infected Land
-Creator: Brittany Gates (https://github.com/brittbot-bgates) | (https://www.linkedin.com/in/brittanycgates) | (https://brittbot.com/)
-About: A text-based RPG game featuring a HERO sent to an infected land controlled by the VILLAIN featuring evil beasts, non-beasts, and humans.
+Creator: Brittany Gates (https://github.com/BrittanyGates) | (https://www.linkedin.com/in/brittanycgates) |
+(https://brittbot.com/)
+About: A text-based RPG game featuring a HERO sent to an infected land controlled by the VILLAIN featuring evil beasts,
+non-beasts, and humans.
 """
 from console import console, notification
 from story_introduction import story_intro
