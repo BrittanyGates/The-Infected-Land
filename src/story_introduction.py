@@ -3,7 +3,7 @@
 from battles import beast_battle
 from console import console, notification
 from hero import hero
-from text_display_tools import clear_screen, sleep_print
+from text_display_tools import clear_screen, sleep_print, storyline_formatter
 from villain import random_beast
 
 
@@ -47,83 +47,41 @@ def story_intro() -> None:
     :return: None
     """
     clear_screen()
-    console.print()
-    console.print("The storyline of THE INFECTED LAND", justify="center")
-    console.print()
-    sleep_print()
-    console.print("Infection ruins the land.", justify="center")
-    console.print()
-    sleep_print()
-    console.print("Residents huddle in their homes.", justify="center")
-    console.print()
-    sleep_print()
-    console.print("Evil beasts, non-beasts, and humans roam the land.", justify="center")
-    console.print()
-    sleep_print()
-    console.print("The residents pray for help.", justify="center")
-    console.print()
-    sleep_print()
-    console.print("It arrives in a flash of lightning and a clap of thunder.", justify="center")
-    console.print()
-    sleep_print()
-    console.print("A hero stands at the entrance to the infected land.", justify="center")
-    console.print()
-    sleep_print()
+
+    lines: list = [
+        "The storyline of THE INFECTED LAND",
+        "Infection ruins the land.",
+        "Residents huddle in their homes.",
+        "Evil beasts, non-beasts, and humans roam the land.",
+        "The residents pray for help.",
+        "It arrives in a flash of lightning and a clap of thunder.",
+        "A hero stands at the entrance to the infected land.",
+
+    ]
+
+    storyline_formatter(lines)
     get_the_hero_name()
-    console.print()
-    console.print(f"{hero.name} holds a sword and a shield.", justify="center")
-    console.print()
-    sleep_print()
-    console.print("The sun reflects off the hero's metal armor.", justify="center")
-    console.print()
-    sleep_print()
-    console.print("Suddenly, a malevolent voice fills the air:", justify="center")
-    console.print()
-    sleep_print()
-    console.print("\"You come to save the people and the land.\"", justify="center")
-    console.print()
-    sleep_print()
-    console.print("\"Go ahead and try. You will fail.\"", justify="center")
-    console.print()
-    sleep_print()
-    console.print("\"I called one of my beasts to destroy you.\"", justify="center")
-    console.print()
-    sleep_print()
-    console.print("\"Then I called one of my non-beasts.\"", justify="center")
-    console.print()
-    sleep_print()
-    console.print("\"Oh, and I called one of my humans.\"", justify="center")
-    console.print()
-    sleep_print()
-    console.print("\"I await your defeat.\"", justify="center")
-    console.print()
-    sleep_print()
-    console.print("\"It's been too long since I had a good laugh.\"", justify="center")
-    console.print()
-    sleep_print()
-    console.print("The malevolent voice ceases.", justify="center")
-    console.print()
-    sleep_print()
-    console.print(f"{hero.name} walks into the infected land ready to fight!", justify="center")
-    console.print()
-    sleep_print()
-    console.print(f"All types of evil beasts surround the hero.", justify="center")
-    console.print()
-    sleep_print()
-    console.print("Bats glide through the sky.", justify="center")
-    console.print()
-    sleep_print()
-    console.print("Wolves travel in packs.", justify="center")
-    console.print()
-    sleep_print()
-    console.print("A massive black bear lumbers around.", justify="center")
-    console.print()
-    sleep_print()
-    console.print("Wild boars root around.", justify="center")
-    console.print()
-    sleep_print()
-    console.print("Feral dogs sniff the air and growl.", justify="center")
-    console.print()
-    sleep_print()
-    clear_screen()
+
+    lines: list = [
+        f"{hero.name} holds a sword and a shield.",
+        "The sun reflects off the hero's metal armor.",
+        "Suddenly, a malevolent voice fills the air:",
+        "\"You come to save the people and the land.\"",
+        "\"Go ahead and try. You will fail.\"",
+        "\"I called one of my beasts to destroy you.\"",
+        "\"Then I called one of my non-beasts.\"",
+        "\"Oh, and I called one of my humans.\"",
+        "\"I await your defeat.\"",
+        "\"It's been too long since I had a good laugh.\"",
+        "The malevolent voice ceases.",
+        f"{hero.name} walks into the infected land ready to fight!",
+        f"All types of evil beasts surround the hero.",
+        "Bats glide through the sky.",
+        "Wolves travel in packs.",
+        "A massive black bear lumbers around.",
+        "Wild boars root around.",
+        "Feral dogs sniff the air and growl.",
+    ]
+
+    storyline_formatter(lines)
     beast_battle(hero, random_beast)

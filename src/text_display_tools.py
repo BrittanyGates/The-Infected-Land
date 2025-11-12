@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This module modifies the way the text displays in the game."""
+"""This module modifies the way the text displays in the program."""
+from console import console
 from time import sleep
 import os
 
@@ -23,3 +24,13 @@ def sleep_print() -> None:
     :return: None
     """
     sleep(4)
+
+
+def storyline_formatter(storyline: list[str]) -> None:
+    """Formats the game's storyline.
+    :return: None
+    """
+    for line in storyline:
+        console.print()
+        sleep_print()
+        console.print(line, justify="center")
