@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """This module provides the storyline after each battle."""
-from battles import human_battle, non_beast_battle, villain_battle
 from improve_loadout import improve_loadout
 from regain_health import regain_health
 from text_display_tools import storyline_formatter
@@ -42,6 +41,7 @@ def after_beast_battle_story(hero) -> None:
         "Banshees howl as they soar around."
     ]
     storyline_formatter(lines)
+    from battles import non_beast_battle
     non_beast_battle(hero, random_non_beast)
 
 
@@ -70,6 +70,7 @@ def after_human_battle_story(hero) -> None:
         f"\"I will show the person who sent you here that now!\""
     ]
     storyline_formatter(lines)
+    from battles import villain_battle
     villain_battle(hero, main_villain)
 
 
@@ -112,4 +113,5 @@ def after_non_beast_battle_story(hero) -> None:
         "Finally, a cultist kneels on the ground praying in an unknown language."
     ]
     storyline_formatter(lines)
+    from battles import human_battle
     human_battle(hero, random_human)
