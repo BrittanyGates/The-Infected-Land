@@ -52,6 +52,8 @@ Please file a new issue using the [Issues](https://github.com/BrittanyGates/The-
 * Latest release notes as of November 2025:
     * Refactored the battle logic into its own module (`battles.py`).
     * Resolved circular import issues.
+    * Created a helper function to format the storyline on screen, reducing repetitive code.
+    * To reduce recursion errors regarding handling user input, replaced recursion function calls with while loops. 
 * Latest release notes as of February 2025:
     * Updated the README.
 * Latest release notes as of January 2025:
