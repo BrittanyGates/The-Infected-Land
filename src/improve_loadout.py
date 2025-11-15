@@ -56,6 +56,7 @@ def improve_loadout(hero) -> None:
                 console.print(f"== {hero.weapon_type} deals {hero.weapon_damage} points of damage per swing ==", justify="center")
                 sleep_print()
                 clear_screen()
+            break
         elif user_input == "A":
             storyline_formatter(armor_lines)
             if hero.armor_type == "Upgraded Armor":
@@ -73,8 +74,10 @@ def improve_loadout(hero) -> None:
                 hero.armor_defense += 5
                 storyline_formatter(armor_upgrade_lines)
                 clear_screen()
+            break
         else:
             console.print()
             console.print("!! Incorrect input !!", style=notification, justify="center")
             sleep_print()
             clear_screen()
+            continue
