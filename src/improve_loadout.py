@@ -22,6 +22,7 @@ def improve_loadout(hero) -> None:
     storyline_formatter(lines)
 
     while True:
+        console.print()
         user_input = input("Enter your choice here: ").capitalize()
         sword_lines: list = [
             f"{hero.name} takes the sword from the resident.",
@@ -65,16 +66,19 @@ def improve_loadout(hero) -> None:
                 hero.armor_type = "Improved Armor"
                 hero.armor_defense = IMPROVED_ARMOR
                 storyline_formatter(armor_upgrade_lines)
+                sleep_print()
                 clear_screen()
             elif hero.armor_type == "Improved Armor":
                 hero.armor_type = "Enhanced Armor"
                 hero.armor_defense = ENHANCED_ARMOR
                 storyline_formatter(armor_upgrade_lines)
+                sleep_print()
                 clear_screen()
             else:
                 hero.armor_type = "Upgraded Armor"
                 hero.armor_defense = UPGRADED_ARMOR
                 storyline_formatter(armor_upgrade_lines)
+                sleep_print()
                 clear_screen()
             break
         else:
@@ -82,5 +86,6 @@ def improve_loadout(hero) -> None:
             console.print("!! Incorrect input !!", style=notification, justify="center")
             sleep_print()
             clear_screen()
-            console.print(f"{hero.name}, choose either the (S) Sword or the (A) Armor.")
+            console.print(f"{hero.name}, choose either the (S) Sword or the (A) Armor.", style=notification, justify="center")
+            console.print()
             continue
