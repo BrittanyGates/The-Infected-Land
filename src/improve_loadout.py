@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module upgrades the Hero's sword or armor."""
 from console import console, notification
+from game_constants import *
 from text_display_tools import clear_screen, sleep_print, storyline_formatter
 
 
@@ -40,19 +41,19 @@ def improve_loadout(hero) -> None:
             storyline_formatter(sword_lines)
             if hero.weapon_type == "Long Sword":
                 hero.weapon_type = "Great Sword"
-                hero.weapon_damage += 5
+                hero.weapon_damage = GREAT_SWORD
                 console.print(f"== {hero.weapon_type} deals {hero.weapon_damage} points of damage per swing ==", justify="center")
                 sleep_print()
                 clear_screen()
             elif hero.weapon_type == "Great Sword":
                 hero.weapon_type = "Mighty Sword"
-                hero.weapon_damage += 5
+                hero.weapon_damage = MIGHTY_SWORD
                 console.print(f"== {hero.weapon_type} deals {hero.weapon_damage} points of damage per swing ==", justify="center")
                 sleep_print()
                 clear_screen()
             else:
                 hero.weapon_type = "Long Sword"
-                hero.weapon_damage += 5
+                hero.weapon_damage = LONG_SWORD
                 console.print(f"== {hero.weapon_type} deals {hero.weapon_damage} points of damage per swing ==", justify="center")
                 sleep_print()
                 clear_screen()
@@ -61,17 +62,17 @@ def improve_loadout(hero) -> None:
             storyline_formatter(armor_lines)
             if hero.armor_type == "Upgraded Armor":
                 hero.armor_type = "Improved Armor"
-                hero.armor_defense += 5
+                hero.armor_defense = IMPROVED_ARMOR
                 storyline_formatter(armor_upgrade_lines)
                 clear_screen()
             elif hero.armor_type == "Improved Armor":
                 hero.armor_type = "Enhanced Armor"
-                hero.armor_defense += 5
+                hero.armor_defense = ENHANCED_ARMOR
                 storyline_formatter(armor_upgrade_lines)
                 clear_screen()
             else:
                 hero.armor_type = "Upgraded Armor"
-                hero.armor_defense += 5
+                hero.armor_defense = UPGRADED_ARMOR
                 storyline_formatter(armor_upgrade_lines)
                 clear_screen()
             break
