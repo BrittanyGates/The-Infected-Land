@@ -8,37 +8,49 @@ from villain import random_beast
 
 
 def get_the_hero_name() -> str:
-    """ Gets the hero's name from the player.    
+    """Gets the hero's name from the player.
     :return: A string of the hero's name.
     """
     console.print()
     console.print("What is your name, hero?", justify="center")
     console.print()
-    try:
-        hero.name = input("Enter your name here: ").capitalize()
-        if len(hero.name) >= 20:
-            console.print()
-            console.print("I cannot remember that long of a name. Please enter a shorter one.", justify="center")
-            sleep_print()
-            return get_the_hero_name()
-        elif hero.name == "":
-            console.print()
-            console.print("Are you sure you don't have a name? Everyone has a name.", justify="center")
-            sleep_print()
-            console.print()
+
+    while True:
+        try:
             hero.name = input("Enter your name here: ").capitalize()
-            if hero.name == "":
+            if len(hero.name) >= 20:
                 console.print()
-                console.print("Well, I'll just call you Hero.", justify="center")
+                console.print(
+                    "I cannot remember that long of a name. Please enter a shorter one.",
+                    justify="center",
+                )
                 sleep_print()
-                hero.name = "Hero"  # Default name for the hero if the player doesn't provide one
-        return hero.name
-    except ValueError:
-        console.print()
-        console.print("!! The name can only contain letters !!", style=notification, justify="center")
-        console.print()
-        sleep_print()
-        return get_the_hero_name()
+                continue
+            elif not hero.name:
+                console.print()
+                console.print(
+                    "Are you sure you don't have a name? Everyone has a name.",
+                    justify="center",
+                )
+                sleep_print()
+                console.print()
+                hero.name = input("Enter your name here: ").capitalize()
+                if not hero.name:
+                    console.print()
+                    console.print("Well, I'll just call you Hero.", justify="center")
+                    sleep_print()
+                    hero.name = "Hero"
+            return hero.name
+        except ValueError:
+            console.print()
+            console.print(
+                "!! The name can only contain letters !!",
+                style=notification,
+                justify="center",
+            )
+            console.print()
+            sleep_print()
+            continue  # Loop again
 
 
 def story_intro() -> None:
