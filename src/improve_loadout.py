@@ -19,16 +19,9 @@ def improve_loadout(hero) -> None:
     ]
 
     storyline_formatter(lines)
-    try:
+
+    while True:
         user_input = input("Enter your choice here: ").capitalize()
-    except ValueError:
-        console.print()
-        console.print("!! The name can only contain letters !!", style=notification, justify="center")
-        console.print()
-        sleep_print()
-        clear_screen()
-        improve_loadout(hero)
-    else:
         sword_lines: list = [
             f"{hero.name} takes the sword from the resident.",
             "Immediately their old sword disappears from its scabbard!",
@@ -42,6 +35,7 @@ def improve_loadout(hero) -> None:
             f"== {hero.armor_type} adds 5 additional points of defense ==",
             f"The total armor defense points is now {hero.armor_defense}.",
         ]
+
         if user_input == "S":
             storyline_formatter(sword_lines)
             if hero.weapon_type == "Long Sword":
@@ -62,6 +56,7 @@ def improve_loadout(hero) -> None:
                 console.print(f"== {hero.weapon_type} deals {hero.weapon_damage} points of damage per swing ==", justify="center")
                 sleep_print()
                 clear_screen()
+            break
         elif user_input == "A":
             storyline_formatter(armor_lines)
             if hero.armor_type == "Upgraded Armor":
@@ -79,9 +74,10 @@ def improve_loadout(hero) -> None:
                 hero.armor_defense += 5
                 storyline_formatter(armor_upgrade_lines)
                 clear_screen()
+            break
         else:
             console.print()
             console.print("!! Incorrect input !!", style=notification, justify="center")
             sleep_print()
             clear_screen()
-            improve_loadout(hero)
+            continue

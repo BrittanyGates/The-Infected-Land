@@ -39,19 +39,12 @@ class Hero:
         :return: None
         """
         random_num = random.randint(0, 1)
-        console.print()
-        console.print(f"{hero.name}, choose your action: (A) Attack or (B) Block.", justify="center")
-        console.print()
-        try:
+        while True:
+            console.print()
+            console.print(f"{hero.name}, choose your action: (A) Attack or (B) Block.", justify="center")
+            console.print()
             user_input = input("Enter your choice here: ").capitalize()
-        except ValueError:
-            console.print()
-            console.print("!! The name can only contain letters !!", justify="center")
-            console.print()
-            attack_sleep_print()
-            clear_screen()
-            hero.attack_villain(villain)
-        else:
+
             if user_input == "A":
                 if random_num == 0:
                     console.print()
@@ -81,6 +74,7 @@ class Hero:
                     console.print()
                     attack_sleep_print()
                     clear_screen()
+                break
             elif user_input == "B":
                 if random_num == 0:
                     console.print()
@@ -102,11 +96,13 @@ class Hero:
                     console.print()
                     attack_sleep_print()
                     clear_screen()
+                break
             else:
                 console.print()
                 console.print("!! Incorrect input !!", style=notification, justify="center")
                 attack_sleep_print()
                 clear_screen()
+                continue
 
 
 # Create the Hero instance
