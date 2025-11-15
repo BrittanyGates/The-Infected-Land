@@ -1,6 +1,6 @@
 # The Infected Land
 
-![A piece of barren land infected by evil creatures like wolves, bats, ghouls, mummies, wizards, and skeletons.](the_infected_land_gemini_generated.jpeg)
+![The Hero of the game battling the various game's villains.](the_infected_land.png)
 
 A CLI game where you (as the Hero) must defeat the Villain's evil creations to cleanse the infection harming the land
 and its residents.
@@ -53,7 +53,8 @@ Please file a new issue using the [Issues](https://github.com/BrittanyGates/The-
     * Refactored the battle logic into its own module (`battles.py`).
     * Resolved circular import issues.
     * Created a helper function to format the storyline on screen, reducing repetitive code.
-    * To reduce recursion errors regarding handling user input, replaced recursion function calls with while loops. 
+    * To reduce recursion errors regarding handling user input, replaced recursion function calls with while loops.
+    * Created game constants and removed the hard-coded values.
 * Latest release notes as of February 2025:
     * Updated the README.
 * Latest release notes as of January 2025:
