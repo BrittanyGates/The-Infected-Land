@@ -9,8 +9,8 @@ import random
 
 class Hero:
     def __init__(self, name: str, class_type: str, race_type: str, health: int = HEALTH, weapon_type: str = WEAPON_TYPE,
-                 weapon_damage: int = BASE_SWORD_DAMAGE, armor_type: str = ARMOR_TYPE,
-                 armor_defense: int = ARMOR_DEFENSE):
+                 weapon_damage: int = BASE_SWORD_DAMAGE, armor_type: str = BASE_ARMOR_TYPE,
+                 armor_defense: int = BASE_ARMOR_DEFENSE):
         """Information about the Hero class.
         :param name: The hero's name.
         :param class_type: The hero's class type (ex. Warrior or Rouge).
