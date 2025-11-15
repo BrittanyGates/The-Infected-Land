@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """This module runs the ending for the game."""
 from console import console, notification
-from text_display_tools import clear_screen, storyline_formatter
-from time import sleep
+from text_display_tools import clear_screen, sleep_print, storyline_formatter
 import sys
 
 
@@ -10,19 +9,13 @@ def the_ending_choice(hero) -> None:
     """Starts the hero's final decision during the ending
     :return: None
     """
-    console.print()
-    console.print()
-    console.print(f"{hero.name}, choose your action: (S) Stay or (L) Leave.", justify="center")
-    try:
-        user_input = input("Enter your choice here: ").capitalize()
-    except ValueError:
+    while True:
         console.print()
-        console.print("!! Please enter either S or L !!", justify="center")
         console.print()
-        sleep(2)
-        clear_screen()
-        the_ending_choice(hero)
-    else:
+        console.print(f"{hero.name}, choose your action: (S) Stay or (L) Leave.", justify="center")
+
+        user_input = input("Enter your choice here: ").upper()
+
         if user_input == "S":
             lines: list = [
                 '"I will stay here to protect all of you."',
@@ -46,10 +39,10 @@ def the_ending_choice(hero) -> None:
             sys.exit()
         else:
             console.print()
-            console.print("!! Incorrect input !!", style=notification, justify="center")
-            sleep(2)
+            console.print("!! Incorrect input. Please enter S or L. !!", style=notification, justify="center")
+            sleep_print()
             clear_screen()
-            the_ending_choice(hero)
+            continue
 
 
 def the_ending(hero, villain) -> None:
