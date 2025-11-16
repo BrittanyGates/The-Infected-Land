@@ -18,7 +18,7 @@ def regain_health(hero) -> int:
     ]
     storyline_formatter(lines)
     if hero.health == 100:
-        return console.print(f"{hero.name} rejects the elixir due to already being at max health.", justify="center")
+        return console.print(f"\n{hero.name} rejects the elixir due to already being at max health.", justify="center")
     else:
         lines: list = [
             f"{hero.name} takes the bottle, opens it, and drinks the liquid.",
