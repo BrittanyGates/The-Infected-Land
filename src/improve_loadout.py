@@ -42,19 +42,19 @@ def improve_loadout(hero) -> None:
             storyline_formatter(sword_lines)
             if hero.weapon_type == "Long Sword":
                 hero.weapon_type = "Great Sword"
-                hero.weapon_damage += (GREAT_SWORD - LONG_SWORD)
+                hero.weapon_damage = GREAT_SWORD
                 console.print(f"== {hero.weapon_type} deals {hero.weapon_damage} points of damage per swing ==", justify="center")
                 sleep_print()
                 clear_screen()
             elif hero.weapon_type == "Great Sword":
                 hero.weapon_type = "Mighty Sword"
-                hero.weapon_damage += (MIGHTY_SWORD - GREAT_SWORD)
+                hero.weapon_damage = MIGHTY_SWORD
                 console.print(f"== {hero.weapon_type} deals {hero.weapon_damage} points of damage per swing ==", justify="center")
                 sleep_print()
                 clear_screen()
             else:
                 hero.weapon_type = "Long Sword"
-                hero.weapon_damage += (LONG_SWORD - BASE_SWORD_DAMAGE)
+                hero.weapon_damage = LONG_SWORD
                 console.print()
                 console.print(f"== {hero.weapon_type} deals {hero.weapon_damage} points of damage per swing ==", justify="center")
                 sleep_print()
