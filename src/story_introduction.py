@@ -16,22 +16,23 @@ def get_the_hero_name() -> str:
     console.print()
 
     while True:
-        try:
             hero.name = input("Enter your name here: ").capitalize()
-            if len(hero.name) >= 20:
+            if hero.name and hero.name[0].isdigit():
                 console.print()
                 console.print(
-                    "I cannot remember that long of a name. Please enter a shorter one.",
-                    justify="center",
-                )
+                    "!! The name can only contain letters !!", style=notification, justify="center")
+                console.print()
+                sleep_print()
+                continue
+            elif len(hero.name) >= 20:
+                console.print()
+                console.print(
+                    "I cannot remember that long of a name. Please enter a shorter one.", justify="center")
                 sleep_print()
                 continue
             elif not hero.name:
                 console.print()
-                console.print(
-                    "Are you sure you don't have a name? Everyone has a name.",
-                    justify="center",
-                )
+                console.print("Are you sure you don't have a name? Everyone has a name.", justify="center")
                 sleep_print()
                 console.print()
                 hero.name = input("Enter your name here: ").capitalize()
@@ -41,16 +42,6 @@ def get_the_hero_name() -> str:
                     sleep_print()
                     hero.name = "Hero"
             return hero.name
-        except ValueError:
-            console.print()
-            console.print(
-                "!! The name can only contain letters !!",
-                style=notification,
-                justify="center",
-            )
-            console.print()
-            sleep_print()
-            continue  # Loop again
 
 
 def story_intro() -> None:
