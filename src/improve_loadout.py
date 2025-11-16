@@ -33,10 +33,6 @@ def improve_loadout(hero) -> None:
             f"{hero.name} takes the armor from the resident.",
             "Suddenly, the armor fuses onto the hero's body!",
         ]
-        armor_upgrade_lines: list = [
-            f"== {hero.armor_type} adds 5 additional points of defense ==",
-            f"The total armor defense points is now {hero.armor_defense}.",
-        ]
 
         if user_input == "S":
             storyline_formatter(sword_lines)
@@ -65,19 +61,22 @@ def improve_loadout(hero) -> None:
             if hero.armor_type == "Upgraded Armor":
                 hero.armor_type = "Improved Armor"
                 hero.armor_defense = IMPROVED_ARMOR
-                storyline_formatter(armor_upgrade_lines)
+                console.print()
+                console.print(f"== {hero.armor_type} has {hero.armor_defense} points of defense ==", justify="center")
                 sleep_print()
                 clear_screen()
             elif hero.armor_type == "Improved Armor":
                 hero.armor_type = "Enhanced Armor"
                 hero.armor_defense = ENHANCED_ARMOR
-                storyline_formatter(armor_upgrade_lines)
+                console.print()
+                console.print(f"== {hero.armor_type} has {hero.armor_defense} points of defense ==", justify="center")
                 sleep_print()
                 clear_screen()
             else:
                 hero.armor_type = "Upgraded Armor"
                 hero.armor_defense = UPGRADED_ARMOR
-                storyline_formatter(armor_upgrade_lines)
+                console.print()
+                console.print(f"== {hero.armor_type} has {hero.armor_defense} points of defense ==", justify="center")
                 sleep_print()
                 clear_screen()
             break
